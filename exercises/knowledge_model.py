@@ -6,6 +6,17 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Knowledge(Base):
+	__tablename__="knowledge"
+	id=Column(Integer, primary_key=True)
+	name=Column(String)
+	animals=Column(String)
+	rating=Column(Integer)
+	def __reper__(self):
+		return("name: {}\n"
+			"animals: {}\n"
+			"rating: {}").format(
+			self.name,self.animals,self.rating)
+
 	# Create a table with 4 columns
 	# The first column will be the primary key
 	# The second column should be a string representing
