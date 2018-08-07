@@ -38,11 +38,27 @@ def query_article_by_topic(animal):
 		Knowledge).filter_by(
 		name=animal).first()
 	return article
-def delete_article_by_topic():
-	pass
+fav_animal=query_article_by_topic("farrets")	
+print(fav_animal)
 
+#query_article_by_topic("farret")
+#print(query_all_articles())	
+def delete_article_by_topic(animal):
+	article=session.query(
+		Knowledge).filter_by(
+		name=animal).delete()
+	session.commit()
+delete_article_by_topic("farrets")
+print(query_all_articles())	
 def delete_all_articles():
-	pass
+	article=session.query(
+		Knowledge).delete()
+	session.commit()
+	delete_all_articles()
 
-def edit_article_rating():
-	pass
+
+
+def edit_article_rating(rating,topic):
+	
+
+

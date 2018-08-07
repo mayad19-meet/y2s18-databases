@@ -11,7 +11,7 @@ class Knowledge(Base):
 	name=Column(String)
 	animals=Column(String)
 	rating=Column(Integer)
-	def __reper__(self):
+	def __repr__(self):
 		return("name: {}\n"
 			"animals: {}\n"
 			"rating: {}").format(
